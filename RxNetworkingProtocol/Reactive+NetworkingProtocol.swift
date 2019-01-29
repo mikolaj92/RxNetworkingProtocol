@@ -11,7 +11,7 @@ import RxSwift
 import NetworkingProtocol
 
 public extension Reactive where Base: URLSessionProtocol {
-    func getAllTasks() -> Single<[URLSessionTaskProtocol]> {
+    public func getAllTasks() -> Single<[URLSessionTaskProtocol]> {
         return Single<[URLSessionTaskProtocol]>.create { single in
             self.base.getAllTasks { (tasks) in
                 single(SingleEvent.success(tasks))
