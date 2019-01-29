@@ -1,0 +1,6 @@
+framework module NetworkingProtocol {
+  umbrella header "NetworkingProtocol-umbrella.h"
+
+  export *
+  module * { export * }
+}

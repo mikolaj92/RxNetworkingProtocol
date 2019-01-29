@@ -1,0 +1,6 @@
+framework module Pods_RxNetworkingProtocol {
+  umbrella header "Pods-RxNetworkingProtocol-umbrella.h"
+
+  export *
+  module * { export * }
+}

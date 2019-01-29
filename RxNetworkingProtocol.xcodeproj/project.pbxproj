@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970253BA5EF036E98E2CEF54 /* Pods_RxNetworkingProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE78BCAC3CB5DA8578DED20F /* Pods_RxNetworkingProtocol.framework */; };
 		E221DDE122004BAA00C76790 /* RxNetworkingProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E221DDD722004BAA00C76790 /* RxNetworkingProtocol.framework */; };
 		E221DDE622004BAA00C76790 /* RxNetworkingProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221DDE522004BAA00C76790 /* RxNetworkingProtocolTests.swift */; };
 		E221DDE822004BAA00C76790 /* RxNetworkingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E221DDDA22004BAA00C76790 /* RxNetworkingProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055F3C95512AB6FDE70C31A7 /* Pods-RxNetworkingProtocol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNetworkingProtocol.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxNetworkingProtocol/Pods-RxNetworkingProtocol.release.xcconfig"; sourceTree = "<group>"; };
+		4A1B85EECE931F64D5BD0E26 /* Pods-RxNetworkingProtocol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNetworkingProtocol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxNetworkingProtocol/Pods-RxNetworkingProtocol.debug.xcconfig"; sourceTree = "<group>"; };
+		DE78BCAC3CB5DA8578DED20F /* Pods_RxNetworkingProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxNetworkingProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E221DDD722004BAA00C76790 /* RxNetworkingProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNetworkingProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E221DDDA22004BAA00C76790 /* RxNetworkingProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxNetworkingProtocol.h; sourceTree = "<group>"; };
 		E221DDDB22004BAA00C76790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970253BA5EF036E98E2CEF54 /* Pods_RxNetworkingProtocol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,12 +57,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586D291E68376FFB45057AED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE78BCAC3CB5DA8578DED20F /* Pods_RxNetworkingProtocol.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A65ABE6E7D8A8E071CF5E7DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A1B85EECE931F64D5BD0E26 /* Pods-RxNetworkingProtocol.debug.xcconfig */,
+				055F3C95512AB6FDE70C31A7 /* Pods-RxNetworkingProtocol.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E221DDCD22004BAA00C76790 = {
 			isa = PBXGroup;
 			children = (
 				E221DDD922004BAA00C76790 /* RxNetworkingProtocol */,
 				E221DDE422004BAA00C76790 /* RxNetworkingProtocolTests */,
 				E221DDD822004BAA00C76790 /* Products */,
+				A65ABE6E7D8A8E071CF5E7DA /* Pods */,
+				586D291E68376FFB45057AED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E221DDEB22004BAA00C76790 /* Build configuration list for PBXNativeTarget "RxNetworkingProtocol" */;
 			buildPhases = (
+				614A7017ED15F676B355932B /* [CP] Check Pods Manifest.lock */,
 				E221DDD222004BAA00C76790 /* Headers */,
 				E221DDD322004BAA00C76790 /* Sources */,
 				E221DDD422004BAA00C76790 /* Frameworks */,
@@ -192,6 +217,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		614A7017ED15F676B355932B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxNetworkingProtocol-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E221DDD322004BAA00C76790 /* Sources */ = {
@@ -345,6 +395,7 @@
 		};
 		E221DDEC22004BAA00C76790 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A1B85EECE931F64D5BD0E26 /* Pods-RxNetworkingProtocol.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -374,6 +425,7 @@
 		};
 		E221DDED22004BAA00C76790 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055F3C95512AB6FDE70C31A7 /* Pods-RxNetworkingProtocol.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
