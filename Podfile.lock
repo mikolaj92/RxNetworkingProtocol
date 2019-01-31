@@ -1,11 +1,11 @@
 PODS:
-  - NetworkingProtocol (0.2.3)
+  - NetworkingProtocol (0.2.4)
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
-  - NetworkingProtocol (~> 0.2.3)
+  - NetworkingProtocol (~> 0.2.4)
   - RxSwift
 
 SPEC REPOS:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  NetworkingProtocol: fe247a68e583df78c206ffbd9547fadb77679bab
+  NetworkingProtocol: 25575600ae5669ad8d74aad9ded8d72102bbf7ad
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 85242bb4a35ee40c39fb89527953470e8ea0c0ee
+PODFILE CHECKSUM: b6ce0ef83c9ebeb3c54425741bdccfa52a823b01
 
 COCOAPODS: 1.5.3
