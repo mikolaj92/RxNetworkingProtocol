@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.source_files  = "RxNetworkingProtocol/**/*.{swift}"
   s.frameworks  = "Foundation"
   s.swift_version = "4.2"
-  s.dependency "NetworkingProtocol", "~> 0.2.4"
+  s.dependency "NetworkingProtocol", "~> 0.2.5"
   s.dependency "RxSwift", "~> 4.4.0"
 end
