@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxNetworkingProtocol"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = 'Simple protocol for URLSession.'
   s.description  = <<-DESC
     RxWrapper Around NetworkingProtocol https://github.com/mikolaj92/NetworkingProtocol
