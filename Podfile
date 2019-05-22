@@ -3,6 +3,6 @@
 
 target 'RxNetworkingProtocol' do
   use_frameworks!
-  pod 'NetworkingProtocol', '~> 0.2.5'
-  pod 'RxSwift'
+  pod 'NetworkingProtocol', '~> 0.3.0'
+  pod 'RxSwift', '~> 5.0'
 end

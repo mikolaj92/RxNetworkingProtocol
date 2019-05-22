@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxNetworkingProtocol"
-  s.version      = "0.1.4"
+  s.version      = "0.2.0"
   s.summary      = 'Simple protocol for URLSession.'
   s.description  = <<-DESC
     RxWrapper Around NetworkingProtocol https://github.com/mikolaj92/NetworkingProtocol
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/mikolaj92/RxNetworkingProtocol.git", :tag => s.version.to_s }
   s.source_files  = "RxNetworkingProtocol/**/*.{swift}"
   s.frameworks  = "Foundation"
-  s.swift_version = "4.2"
-  s.dependency "NetworkingProtocol", "~> 0.2.5"
-  s.dependency "RxSwift", "~> 4.4.0"
+  s.swift_version = "5.0"
+  s.dependency "NetworkingProtocol", "~> 0.3.0"
+  s.dependency "RxSwift", "~> 5.0"
 end

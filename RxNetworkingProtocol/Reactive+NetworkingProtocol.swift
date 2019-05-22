@@ -11,7 +11,7 @@ import RxSwift
 import NetworkingProtocol
 
 public extension Reactive where Base: URLSessionProtocol {
-    public func getAllTasks() -> Single<[URLSessionTaskProtocol]> {
+    func getAllTasks() -> Single<[URLSessionTaskProtocol]> {
         return Single<[URLSessionTaskProtocol]>.create { single in
             self.base.getAllTasks { (tasks) in
                 single(SingleEvent.success(tasks))
@@ -22,13 +22,13 @@ public extension Reactive where Base: URLSessionProtocol {
 }
 
 public extension Reactive where Base: ServiceProtocol {
-    public func dataTask(withRequest request: ServiceRequestProtocol) -> Single<Void> {
+    func dataTask(withRequest request: ServiceRequestProtocol) -> Single<Void> {
         return Single<Void>.create { single in
-            let task = self.base.dataTask(withRequest: request) { (result: Result<Void>) in
+            let task = self.base.dataTask(withRequest: request) { (result: Result<Void, Error>) in
                 switch result {
-                case .value:
+                case .success:
                     single(SingleEvent.success(()))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
@@ -38,13 +38,13 @@ public extension Reactive where Base: ServiceProtocol {
         }
     }
     
-    public func dataTask<T>(withRequest request: ServiceRequestProtocol) -> Single<T> where T: Decodable {
+    func dataTask<T>(withRequest request: ServiceRequestProtocol) -> Single<T> where T: Decodable {
         return Single<T>.create { single in
-            let task = self.base.dataTask(withRequest: request) { (result: Result<T>) in
+            let task = self.base.dataTask(withRequest: request) { (result: Result<T, Error>) in
                 switch result {
-                case .value(let val):
+                case .success(let val):
                     single(SingleEvent.success(val))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
@@ -54,13 +54,13 @@ public extension Reactive where Base: ServiceProtocol {
         }
     }
     
-    public func uploadTask(withRequest request: ServiceRequestProtocol, fromFile fileURL: URL) -> Single<Void> {
+    func uploadTask(withRequest request: ServiceRequestProtocol, fromFile fileURL: URL) -> Single<Void> {
         return Single<Void>.create { single in
-            let task = self.base.uploadTask(withRequest: request, fromFile: fileURL) { (result: Result<Void>) in
+            let task = self.base.uploadTask(withRequest: request, fromFile: fileURL) { (result: Result<Void, Error>) in
                 switch result {
-                case .value:
+                case .success:
                     single(SingleEvent.success(()))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
@@ -70,13 +70,13 @@ public extension Reactive where Base: ServiceProtocol {
         }
     }
     
-    public func uploadTask(withRequest request: ServiceRequestProtocol, from data: Data) -> Single<Void> {
+    func uploadTask(withRequest request: ServiceRequestProtocol, from data: Data) -> Single<Void> {
         return Single<Void>.create { single in
-            let task = self.base.uploadTask(withRequest: request, from: data) { (result: Result<Void>) in
+            let task = self.base.uploadTask(withRequest: request, from: data) { (result: Result<Void, Error>) in
                 switch result {
-                case .value:
+                case .success:
                     single(SingleEvent.success(()))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
@@ -86,13 +86,13 @@ public extension Reactive where Base: ServiceProtocol {
         }
     }
     
-    public func downloadTask(withRequest request: ServiceRequestProtocol) -> Single<URL> {
+    func downloadTask(withRequest request: ServiceRequestProtocol) -> Single<URL> {
         return Single<URL>.create { single in
-            let task = self.base.downloadTask(withRequest: request) { (result: Result<URL>) in
+            let task = self.base.downloadTask(withRequest: request) { (result: Result<URL, Error>) in
                 switch result {
-                case .value(let val):
+                case .success(let val):
                     single(SingleEvent.success(val))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
@@ -102,13 +102,13 @@ public extension Reactive where Base: ServiceProtocol {
         }
     }
     
-    public func downloadTask(withResumeData resumeData: Data) -> Single<URL> {
+    func downloadTask(withResumeData resumeData: Data) -> Single<URL> {
         return Single<URL>.create { single in
-            let task = self.base.downloadTask(withResumeData: resumeData) { (result: Result<URL>) in
+            let task = self.base.downloadTask(withResumeData: resumeData) { (result: Result<URL, Error>) in
                 switch result {
-                case .value(let val):
+                case .success(let val):
                     single(SingleEvent.success(val))
-                case .error(let err):
+                case .failure(let err):
                     single(SingleEvent.error(err))
                 }
             }
